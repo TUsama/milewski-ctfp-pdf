@@ -1,154 +1,154 @@
 % !TEX root = ../../ctfp-print.tex
 
 \begin{quote}
-  For some time now I've been floating the idea of writing a book about
-  category theory that would be targeted at programmers. Mind you, not
-  computer scientists but programmers --- engineers rather than
-  scientists. I know this sounds crazy and I am properly scared. I can't
-  deny that there is a huge gap between science and engineering because I
-  have worked on both sides of the divide. But I've always felt a very
-  strong compulsion to explain things. I have tremendous admiration for
-  Richard Feynman who was the master of simple explanations. I know I'm no
-  Feynman, but I will try my best. I'm starting by publishing this preface
-  --- which is supposed to motivate the reader to learn category theory
-  --- in hopes of starting a discussion and soliciting feedback.\footnote{
-    You may also watch me teach this material to a live audience, at
-    \href{https://goo.gl/GT2UWU}{https://goo.gl/GT2UWU} (or search
-    ``bartosz milewski category theory'' on YouTube.)}
+  一直以来，我都想写一本介绍范畴论的书，而书的主要面向受众为程序员。
+注意，我在这专指的是程序员以及软件工程师这类群体，计算机科学家这种不在此列
+
+听起来像是一个大工程，对吧？其实，我本人对此也是颇为诚惶诚恐。我清楚地
+意识到，在计算机科学与实际开发之间有着巨大的鸿沟，因为我本人对此二者均有涉猎。
+我对于解释事物至始至终都抱有极大的热情。
+也正因此，我深深地敬佩理查德·费曼（Richard Feynman）先生，
+他真正做到了化繁为简，将复杂事物浓缩与简单的解释之中。我自是不如费曼先生，但我仍会尽全力写好这本书。
+我希望能以此书为契机，激发读者对范畴论的兴趣。
+所以我会将本序章公开发布，希望各位读者能在阅读后积极讨论并给予我反馈。
+\footnote{
+我也制作了一份本书的有声教学资料，点击以下链接即可查看：
+\href{https://goo.gl/GT2UWU}{https://goo.gl/GT2UWU}（抑或在 YouTube 上搜索“bartosz milewski category theory”）
+}。
 \end{quote}
 
-\lettrine[lhang=0.17]{I}{will attempt}, in the space of a few paragraphs,
-to convince you that this book is written for you, and whatever
-objections you might have to learning one of the most abstract branches
-of mathematics in your ``copious spare time'' are totally unfounded.
+\lettrine[lhang=0.17]{我}{会在}接下来的几段介绍中解决如下的两个
+问题：你为什么需要读这本书？范畴论是如此的抽象，你
+是否需要会花掉大量的业余时间才能学通？我的答案是，你确实应该阅读本书，
+而且学习范畴论也不会耗费你大把的时间。
 
-My optimism is based on several observations. First, category theory is
-a treasure trove of extremely useful programming ideas. Haskell
-programmers have been tapping this resource for a long time, and the
-ideas are slowly percolating into other languages, but this process is
-too slow. We need to speed it up.
+我可不是乱下结论，这是我观察得来的。首先，范畴论乃是编程思想的
+宝库，其中埋藏着诸多颇为有用的思想。可以说，使用
+ Haskell 的程序员就是探索该宝库的先锋。随着编程语言的
+发展，范畴论中的诸多概念也开始渗透到了其他语言之中，
+只是效率比较低。我们得为这一进程加加速。
 
-Second, there are many different kinds of math, and they appeal to
-different audiences. You might be allergic to calculus or algebra, but
-it doesn't mean you won't enjoy category theory. I would go as far as
-to argue that category theory is the kind of math that is particularly
-well suited for the minds of programmers. That's because category theory
---- rather than dealing with particulars --- deals with structure. It
-deals with the kind of structure that makes programs composable.
+那么学习耗时何如？须知，数学中也有不同的分支，
+分支也是挑人的。你也许一听到微积分与数论就直犯恶心，
+但这并不代表范畴论也是如此。我会尽可能地向你
+证明，范畴论其实是一门特别适合程序员的数学分支，它能与编程思维相得益彰。
+这是由范畴论本身的特质决定的：范畴论处理的是结构，
+而非一个个独立而特殊的事物。而且它处理的那种结构，恰好就是
+程序中能够一块块组合起来的结构。
 
-Composition is at the very root of category theory --- it's part of the
-definition of the category itself. And I will argue strongly that
-composition is the essence of programming. We've been composing things
-forever, long before some great engineer came up with the idea of a
-subroutine. Some time ago the principles of structured programming
-revolutionized programming because they made blocks of code composable.
-Then came object oriented programming, which is all about composing
-objects. Functional programming is not only about composing functions
-and algebraic data structures --- it makes concurrency composable ---
-something that's virtually impossible with other programming paradigms.
+组合乃是范畴论的基础，是范畴定义中的一部分。
+我会在本书中向你证明，组合
+才是编程的本质。早在各路资深软件工程师创造出
+子例程（subroutine）这一概念前，我们便已经走在“组合”这一道路上了。
+结构化程序设计的出现如同一道春风，将编程带入了新的篇章，
+原先分散独立的代码块得以相互组合在一起。
+随之而来的便是面向对象编程的兴起，这一弄潮儿已是全然关于对象的组合了。
+函数式编程从来都不只是与函数的组合以及代数数据结构（algebraic data structures）
+挂钩，它还让并发得以可能，这在其他的编程范式里无异于天方夜谭。
 
-Third, I have a secret weapon, a butcher's knife, with which I will
-butcher math to make it more palatable to programmers. When you're a
-professional mathematician, you have to be very careful to get all your
-assumptions straight, qualify every statement properly, and construct
-all your proofs rigorously. This makes mathematical papers and books
-extremely hard to read for an outsider. I'm a physicist by training, and
-in physics we made amazing advances using informal reasoning.
-Mathematicians laughed at the Dirac delta function, which was made up on
-the spot by the great physicist P. A. M. Dirac to solve some
-differential equations. They stopped laughing when they discovered a
-completely new branch of calculus called distribution theory that
-formalized Dirac's insights.
 
-Of course when using hand-waving arguments you run the risk of saying
-something blatantly wrong, so I will try to make sure that there is
-solid mathematical theory behind informal arguments in this book. I do
-have a worn-out copy of Saunders Mac Lane's \emph{Categories for
-  the Working Mathematician} on my nightstand.
+最后，我还有个秘密武器：一把能够精准切分无聊数学的菜刀。
+我会用它来将数学“大卸八块”，以飨各位读者程序员。对于职业数学家而言，
+设定前提时总是得万般小心，尽可能的让其直接而清晰；
+证明命题则是得滴水不漏；最后还得将你的证明严格地构造成型。
+这就是为何数学论文对于外行人而言如同天书。
+我是一位专业出身的物理学家，在物理研究中
+，我们通常会使用非形式推理来推进研究。例如，狄拉克提出的 δ 函数便是
+其中之一，他用此函数来解决某些微分方程的问题。而数学家们总是以此来大加嘲笑。
 
-Since this is category theory \emph{for programmers} I will illustrate
-all major concepts using computer code. You are probably aware that
-functional languages are closer to math than the more popular imperative
-languages. They also offer more abstracting power. So a natural
-temptation would be to say: You must learn Haskell before the bounty of
-category theory becomes available to you. But that would imply that
-category theory has no application outside of functional programming and
-that's simply not true. So I will provide a lot of C++ examples.
-Granted, you'll have to overcome some ugly syntax, the patterns might
-not stand out from the background of verbosity, and you might be forced
-to do some copy and paste in lieu of higher abstraction, but that's just
-the lot of a C++ programmer.
+很快他们便笑不出来了，因为 δ 函数开辟了微积分的一条新道路
+——分布理论（distribution theory）。狄拉克的深远洞见可见一斑。
 
-But you're not off the hook as far as Haskell is concerned. You don't
-have to become a Haskell programmer, but you need it as a language for
-sketching and documenting ideas to be implemented in C++. That's exactly
-how I got started with Haskell. I found its terse syntax and powerful
-type system a great help in understanding and implementing C++
-templates, data structures, and algorithms. But since I can't expect the
-readers to already know Haskell, I will introduce it slowly and explain
-everything as I go.
 
-If you're an experienced programmer, you might be asking yourself: I've
-been coding for so long without worrying about category theory or
-functional methods, so what's changed? Surely you can't help but notice
-that there's been a steady stream of new functional features invading
-imperative languages. Even Java, the bastion of object-oriented
-programming, let the lambdas in. C++ has recently been evolving at a
-frantic pace --- a new standard every few years --- trying to catch up
-with the changing world. All this activity is in preparation for a
-disruptive change or, as we physicists call it, a phase transition. If
-you keep heating water, it will eventually start boiling. We are now in
-the position of a frog that must decide if it should continue swimming
-in increasingly hot water, or start looking for some alternatives.
+当然，将繁杂论证化为三言两语也是有代价的，有时我可能会写出一些
+明显错误的东西。我会尽可能地确保，本书中非形式论证的
+背后都有着一套扎实严谨的数学论证。我手头确实有一本
+桑德斯·麦克莱恩（Saunders Mac Lane）的\emph{Categories for the Working Mathematician} 旧复印本，
+就在我的床头柜上。
 
-\begin{figure}[H]
+由于这本书的主要受众为\emph{程序员}，所以我会将
+范畴论中的所有主要概念用计算机代码重新展示出来。或许你已经意识到了，
+函数式语言要更贴近数学的逻辑，大行其道的命令式语言则与数学迥异，
+并且函数式语言的抽象能力更强。自然而然地便有人采取这样的一个观点：
+不学 Haskell，就不算是入了函数式编程的门。
+然而这样的观点无疑是不正确的，
+因为它潜在地将范畴论与非函数式语言割裂开来。
+所以，我会在本书中给出大量的 C++ 示例。当然，
+C++的语法确实相当丑陋，冗杂的东西一多，整体模式便难以理清。你可能得
+频繁的复制粘贴一些代码，而不是尝试从概念的角度理解其中的含义。你懂的，C++是这样的。
+
+
+
+但是想完全摆脱开 Haskell 也不现实。你确实不用非得成为
+专职 Haskell 的程序员，你应该将 Haskell 视为 C++ 中待实现
+特性的集合。我上手 Haskell 时便是抱着这样的目的。
+在学习的过程中，我发现它的语法非常简洁，类型系统
+也十分的强大。这对我理解 C++ 中的模板、数据结构以及算法起到了
+非常大的助力。但毕竟不是每位读者都对 Haskell 有所了解，
+所以我会在书写的过程中逐步引入，并细致地解释相关的概念。
+
+
+如果你是一位身经百战的程序员，你可能会发问：我码代码这么久以来都没有
+接触过范畴论以及函数式编程，为什么我现在要开始学这些
+新东西？你说得对，这是因为在现在的命令式语言中，
+函数式风格的特性开始逐步出现，此乃大趋势。
+哪怕是 Java，这一面向对象编程的大本营，
+都给 lambda 开了绿灯。反观 C++，在每过几年便推出的新标准中，
+也能找到跟上这一趋势的诸多痕迹，只是显得有些手忙脚乱罢了。
+所有的这些变化都昭示了一点：一场巨大的变革即将到来
+，或者用我们物理学家的行话来说，这是准备到了相变点。就像是
+不断地煮水，最终会让水沸腾那样。而我们就是那锅水里的青蛙，
+到底是继续在逐渐温暖的水中惬意游泳，还是开始为自己考虑退路，
+选择权就在我们手中。
+
+\begin{figure}[H
   \centering
   \includegraphics[width=0.5\textwidth]{images/img_1299.jpg}
 \end{figure}
 
 \noindent
-One of the forces that are driving the big change is the multicore
-revolution. The prevailing programming paradigm, object oriented
-programming, doesn't buy you anything in the realm of concurrency and
-parallelism, and instead encourages dangerous and buggy design. Data
-hiding, the basic premise of object orientation, when combined with
-sharing and mutation, becomes a recipe for data races. The idea of
-combining a mutex with the data it protects is nice but, unfortunately,
-locks don't compose, and lock hiding makes deadlocks more likely and
-harder to debug.
+论及这一大趋势的推手，多核革新不得不提。
+之前流行的编程范式中，例如面向对象编程，根本就是对并发、并行等
+概念嗤之以鼻，认为并发并行只会给你的设计埋下暗雷，指不定什么时候
+就会爆炸。面向对象编程的基础前提便是数据隐藏（Data Hiding）
+，但当被隐藏的数据被多方共用以及修改时，便产生了数据争用（Data Race）。
+为数据加上互斥锁（Mutex）是个不错的主意。然而，锁不能
+使用组合，而且锁将数据隐藏起来后，会更容易发生死锁，
+并且也会加剧调试的难度。
 
-But even in the absence of concurrency, the growing complexity of
-software systems is testing the limits of scalability of the imperative
-paradigm. To put it simply, side effects are getting out of hand.
-Granted, functions that have side effects are often convenient and easy
-to write. Their effects can in principle be encoded in their names and
-in the comments. A function called SetPassword or WriteFile is obviously
-mutating some state and generating side effects, and we are used to
-dealing with that. It's only when we start composing functions that have
-side effects on top of other functions that have side effects, and so
-on, that things start getting hairy. It's not that side effects are
-inherently bad --- it's the fact that they are hidden from view that
-makes them impossible to manage at larger scales. Side effects don't
-scale, and imperative programming is all about side effects.
 
-Changes in hardware and the growing complexity of software are forcing
-us to rethink the foundations of programming. Just like the builders of
-Europe's great gothic cathedrals we've been honing our craft to the
-limits of material and structure. There is an unfinished gothic
-\urlref{http://en.wikipedia.org/wiki/Beauvais_Cathedral}{cathedral in
-  Beauvais}, France, that stands witness to this deeply human struggle
-with limitations. It was intended to beat all previous records of height
-and lightness, but it suffered a series of collapses. Ad hoc measures
-like iron rods and wooden supports keep it from disintegrating, but
-obviously a lot of things went wrong. From a modern perspective, it's a
-miracle that so many gothic structures had been successfully completed
-without the help of modern material science, computer modelling, finite
-element analysis, and general math and physics. I hope future
-generations will be as admiring of the programming skills we've been
-displaying in building complex operating systems, web servers, and the
-internet infrastructure. And, frankly, they should, because we've done
-all this based on very flimsy theoretical foundations. We have to fix
-those foundations if we want to move forward.
+但是即便没有并发，愈发复杂的软件系统
+也在不断地挑战命令式编程的极限。
+一言以蔽之，
+副作用变得越来越难以解决。而反观函数式编程，带有副作用的函数通常写起来方便快捷，
+它们的副作用在原则上可以在名字以及注释中标出。
+一个叫做 SetPassword 或者是 WriteFile 的函数明显就会
+改变某些状态并产生副作用，这在我们的工作场景中十分多见。
+单个有副作用的函数不值一提，但若是将多个
+这样的函数层层嵌套堆叠，事情就会变得棘手起来。
+注意，我不是在说
+副作用本身棘手，而是当副作用藏在一个大的框架中，千丝万缕难以理清的时候，
+事情才会棘手。随着框架的变大，命令式编程只会让副作用
+越来越散乱无章。
+
+硬件的日新月异以及软件的愈发复杂，迫使我们重新思考起一个问题：
+编程的“地基”到底应该打在何处？我们就像是欧洲的哥特式大教堂的建造者们
+那样，不断地提升工艺水平，追逐材料以及结构的极限。
+在法国博韦有一座尚未完工的哥特式
+\urlref{http://en.wikipedia.org/wiki/Beauvais_Cathedral}{教堂
+}，在教堂的一砖一瓦之上，你能够清晰地看到人类是如何探索极限的。
+这座教堂在建造之初，建筑师们便誓要以此来打破之前
+教堂高度以及采光的记录，但很不幸，一系列的垮塌事故葬送了这一梦想。现今教堂中
+搭建了众多铁棒以及木支架，用来防止整座建筑崩塌，但很明显，根子上的错误无法通过打补丁纠正。
+从现代的视角来看，这一教堂的建造既无现代材料科学的指导，
+也无计算机建模，更不用说有限元分析或是高等的数学与物理知识，
+但却还是搭建出了如此之多的哥特式结构。不得不说，此乃奇迹。
+而遥望未来，我们的子孙后代们面对着由我们编写出
+的复杂操作系统、网页服务端以及互联网基础设施，我希望
+他们也能由衷地赞叹这些编程技术。
+不客气地说，他们理当赞叹，因为尽管我们的编程理论基础十分脆弱，却还是创造了如此辉煌的成就。
+而当下，我们的使命就是打破束缚着编程技术的桎梏，创造出
+更坚实的理论基础。
 
 \begin{figure}
   \centering
