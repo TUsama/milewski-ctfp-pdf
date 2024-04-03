@@ -85,6 +85,11 @@ jobs:
               with:
                   name: ctfp
                   path: ctfp
+            
+            - name: Upload the Build Artifacts
+              uses: actions/upload-artifact@v4.3.1
+              with:
+                  path: ctfp
 
             - name:
                   Upload release assets (${{ matrix.packages }}--${{ github.ref
